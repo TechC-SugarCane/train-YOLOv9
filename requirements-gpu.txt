@@ -43,6 +43,7 @@ numpy==1.26.4
 onnx==1.16.1
 onnx-simplifier==0.4.36
 onnxruntime-gpu==1.18.1
+onnxslim==0.1.44
 opencv-python==4.10.0.84
 opencv-python-headless==4.10.0.84
 packaging==24.1
