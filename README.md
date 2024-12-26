@@ -190,6 +190,20 @@ python train_dual.py --workers 8 --device 0 --batch 16 --data ../manage-dataset/
 - サトウキビ: `hyp.scratch-sugarcane.yaml`
 - パイナップル: `hyp.scratch-pineapple.yaml`
 
+## Export
+
+学習したモデルをONNX形式に変換する場合は、以下のコマンドを実行してください。
+
+通常の`export.py`を使うとうまく変換されないので、ultralyticsを使ったやり方で行います。
+
+```shell
+# --weightsのパスを変更してください
+# --dataも必要に応じて変更してください
+python export_ultralytics.py --data ../manage-dataset/datasets/sugarcane/data.yaml --weights ./runs/train/<--name(番号)>/weights/best.pt --device 0 --format onnx --imgsz 640
+```
+
+上記の場合、`./runs/train/<--name(番号)>/weights/best.onnx`に変換されたモデルが保存されます。
+
 ## コントリビューター向けガイドライン
 
 コントリビューター向けのガイドラインについては、こちらの[CONTRIBUTING.md](https://github.com/TechC-SugarCane/.github/blob/main/CONTRIBUTING.md)を参照してください。
